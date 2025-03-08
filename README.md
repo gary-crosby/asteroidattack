@@ -4,13 +4,14 @@ Asteroid Attack! is a simple retro-inspired space shooter game where you defend 
 
 I created it as a simple p5.js gaming demo for my MULT 217 students.
 
+You must run the game on a local server.
+
 ## Notes
 
 The game aesthetics were inspired by early vector-based green monochrome video games.
 
 The game isn't perfect, it contains some sloppy/inefficient code, and it could use a few gameplay embellishments but it works.
 
-You must run the game on a local server.
 
 ## Credits:
 
