@@ -2,7 +2,7 @@
 
 Asteroid Attack! is a simple retro-inspired space shooter game where you defend your spaceship from incoming asteroids.
 
-I created it as a simple p5.js gaming demo for my MULT 217 students.
+I created it as a simple p5.js game demo for my MULT 217 students.
 
 ## Notes
 
