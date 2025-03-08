@@ -14,7 +14,7 @@ The game isn't perfect, it contains some sloppy/inefficient code, and it could u
 
 Audio assets except success.mp3 from www.kenney.nl used under CC0 license.
 
-Audio asset success.mp3 from Leszek_Szary @ pixabay.com used under CC0 license.
+Audio asset success.mp3 from Leszek_Szary @ www.pixabay.com used under CC0 license.
 
 
 ## Installation
