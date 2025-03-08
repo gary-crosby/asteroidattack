@@ -10,7 +10,7 @@ The game aesthetics were inspired by early vector-based green monochrome video g
 
 The game isn't perfect, it contains some sloppy/inefficient code, and it could use a few gameplay embellishments but it works.
 
-Credits:
+## Credits:
 
 Audio assets except success.mp3 from www.kenney.nl used under CC0 license.
 
