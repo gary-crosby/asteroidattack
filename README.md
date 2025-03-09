@@ -11,7 +11,7 @@ It was a quick build so it contains some sloppy/inefficient code and it could us
 **You must run the game from a server**.
 
 
-## Credits:
+## Credits
 
 Audio assets except success.mp3 from www.kenney.nl used under CC0 license.
 
