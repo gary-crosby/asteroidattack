@@ -18,6 +18,8 @@ Audio asset success.mp3 from Leszek_Szary @ www.pixabay.com used under CC0 licen
 
 ## Installation
 
+Regardless of which method you use, **you must run the game from a server**.
+
 ### Method 1
 Clone the repository:
    ```bash
@@ -26,5 +28,3 @@ Clone the repository:
    
 ### Method 2
 Download the ZIP file.
-
-Regardless of which method you use, **you must run the game from a server**.
