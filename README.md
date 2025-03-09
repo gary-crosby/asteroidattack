@@ -1,6 +1,6 @@
 # Asteroid Attack!
 
-Asteroid Attack! is a simple retro-inspired space shooter game where you defend your spaceship from incoming asteroids. The game aesthetics were loosely inspired by early vector-based green monochrome video games.
+Asteroid Attack! is a simple retro-inspired space shooter game demo where you defend your spaceship from incoming asteroids. The game aesthetics were loosely inspired by early vector-based video games on green monochrome screens.
 
 ## Notes
 
