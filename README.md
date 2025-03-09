@@ -19,7 +19,11 @@ Audio asset success.mp3 from Leszek_Szary @ www.pixabay.com used under CC0 licen
 
 
 ## Installation
-1. Clone the repository:
+
+### Method 1
+Clone the repository:
    ```bash
    git clone https://github.com/gary-crosby/asteroidattack.git
    
+### Method 2
+Download the ZIP file
