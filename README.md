@@ -8,7 +8,7 @@ I created it for my Sask Polytech MULT 217 students as a simple game demo create
 
 The game aesthetics were inspired by early vector-based green monochrome video games.
 
-The game isn't perfect, it contains some sloppy/inefficient code, and it could use a few gameplay embellishments but it works.
+It was a quick build so the game contains some sloppy/inefficient code and it could use additional gameplay elements but it works.
 
 **You must run the game from a live server**.
 
