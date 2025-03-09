@@ -8,8 +8,6 @@ I created this project for my Sask Polytech MULT 217 students as a demo of a sim
 
 It was a quick build so it contains some sloppy/inefficient code and it could use additional gameplay elements to make it more fun. But it works as a demo.
 
-**You must run the game from a server**.
-
 
 ## Credits
 
@@ -27,4 +25,6 @@ Clone the repository:
 ```
    
 ### Method 2
-Download the ZIP file
+Download the ZIP file.
+
+Regardless of which method you use, **you must run the game from a server**.
