@@ -2,7 +2,7 @@
 
 Asteroid Attack! is a simple retro-inspired space shooter game where you defend your spaceship from incoming asteroids.
 
-I created it as a simple p5.js game demo for my MULT 217 students.
+I created it for my Sask Polytech MULT 217 students as a simple game demo created with p5.js.
 
 ## Notes
 
@@ -18,6 +18,10 @@ The game isn't perfect, it contains some sloppy/inefficient code, and it could u
 Audio assets except success.mp3 from www.kenney.nl used under CC0 license.
 
 Audio asset success.mp3 from Leszek_Szary @ www.pixabay.com used under CC0 license.
+
+## License
+
+
 
 
 ## Installation
