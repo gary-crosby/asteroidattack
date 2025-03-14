@@ -11,9 +11,9 @@ It was a quick build so it contains some sloppy/inefficient code and it could us
 
 ## Credits
 
-Audio assets except success.mp3 from www.kenney.nl used under CC0 license.
+Audio assets except _success.mp3_ from www.kenney.nl used under CC0 license.
 
-Audio asset success.mp3 from Leszek_Szary @ www.pixabay.com used under CC0 license.
+Audio asset _success.mp3_ from Leszek_Szary @ www.pixabay.com used under CC0 license.
 
 
 ## Installation
