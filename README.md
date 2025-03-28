@@ -1,12 +1,12 @@
 # Asteroid Attack!
 
-Asteroid Attack! is a simple retro-inspired space shooter game demo where you defend your spaceship from incoming asteroids. The game aesthetics were loosely inspired by early vector-based video games on green monochrome screens.
+Asteroid Attack! is a simple retro-inspired space shooter game demo where you defend your spaceship from incoming asteroids. The game aesthetics were loosely inspired some early video games that had vector-based graphics with a limited color palette.
 
 ## Notes
 
-I created this project for my Sask Polytech MULT 217 students as a demo of a simple game you can create with p5.js.
+I created this project for my Sask Polytech MULT 217 students as an example of a simple game you can create with p5.js.
 
-It was a quick build so it contains some sloppy/inefficient code and it could use additional gameplay elements to make it more fun. But it works as a demo.
+It was a quick build so it contains some sloppy/inefficient code. It could also could use a few additional gameplay elements to make it more fun. But it works well enough as a demo.
 
 
 ## Credits
