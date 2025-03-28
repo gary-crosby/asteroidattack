@@ -1,14 +1,123 @@
 /**
  * Contains all classes for Asteroid Alert!
+*/
+
+
+/**
+ * Represents the player's display console
+ * 
+ * @param {number} weapon == % remnaining of weapon
+ * @param {number} shield == % remaining of shield
+ * @param {number} fuel == % remaining of fuel
+ * @param {number} score == player's score
  */
+class myConsole {
+  constructor(weapon = 100, shield = 100, fuel = 100, score = 0,
+    weaponCost = 0.4, shieldCost = 50, fuelCost = 0.035, asteroidScore = 1000) {
+    this.weapon = weapon;
+    this.weaponCost = weaponCost;
+    this.shield = shield;
+    this.shieldCost = shieldCost;
+    this.fuel = fuel;
+    this.fuelCost = fuelCost;
+    this.score = score;
+    this.asteroidScore = asteroidScore;
+    this.active = true; // Property to track if the projectile is active
+    this.display();
+  }
+
+  // Reset all console values to game start states
+  reset() {
+    this.weapon = 100;
+    this.shield = 100;
+    this.fuel = 100;
+    this.score = 0;
+    this.display();
+  }
+
+  // Destroy the console
+  destroy() {
+    this.active = false; // Set the projectile as inactive
+  }
+
+  // Asteroid hit so increase score
+  asteroidDestroyed() {
+    this.score += this.asteroidScore;
+  }
+
+  //Ship moved so update fuel level
+  shipMoved() {
+    this.fuel -= this.fuelCost; 
+    if (this.fuel < 0) {
+      this.fuel = 0;
+    }
+  }
+
+    // Weapon fired so decrement weapon power
+    weaponFired() {
+      this.weapon -= this.weaponCost; 
+      if (this.weapon < 0) {
+        this.weapon = 0;
+      }
+    }
+
+  // Collision between asteroid and ship
+  collision() {
+    this.shield -= this.shieldCost;
+  }
+
+  // Displays console
+  display() {
+    strokeWeight(0);
+    textAlign(LEFT, TOP);
+    textSize(20);
+    // Change shield color based on status
+    if (this.shield > 50) {
+      fill(GREEN);
+    }
+    else if (this.shield <= 50 && this.shield > 0) {
+      fill(YELLOW)
+    }
+    else {
+      fill(RED);
+    }
+    text("Shield: " + parseInt(this.shield) + "%", 165, 5);
+    // Change Weapon color based on status
+    if (this.weapon > 50) {
+      fill(GREEN);
+    }
+    else if (this.weapon <= 50 && this.weapon > 10) {
+      fill(YELLOW)
+    }
+    else {
+      fill(RED);
+    }
+    text("Weapon: " + parseInt(this.weapon) + "%", 350, 5);
+    // Change fuel color base on status
+    if (this.fuel > 50) {
+      fill(GREEN);
+    }
+    else if (this.fuel <= 50 && this.fuel > 10) {
+      fill(YELLOW)
+    }
+    else {
+      fill(RED);
+    }
+    text("Fuel: " + parseInt(this.fuel) + "%", 10, 5);
+    // Score is always GREEN
+    fill(GREEN);
+    text("Score: " + this.score, 555, 5);
+  }
+}
+
 
 /**
  * Represents a weapon projectile
  * 
- *  @param {number} x - x position of the projectile
- *  @param {number} y - y position of the projectile
- *  @param {number} deltaY - [optional] number of pixels to move the projectile
- *  @param {number} r - [optional] radius in pixels of the projectile 
+ *  @param {number} x == x position of the projectile
+ *  @param {number} y == y position of the projectile
+ *  @param {number} deltaY == [optional] number of pixels to move the projectile
+ *  @param {number} r == [optional] radius in pixels of the projectile 
 */
 class projectile {
   constructor(x, y, deltaY = 15, r = 3) {
@@ -36,7 +145,7 @@ class projectile {
   // Display the projectile
   display() {
     if (this.active) {
-      fill(0, 255, 0); // green color for the projectile
+      fill(GREEN);
       ellipseMode(CENTER);
       ellipse(this.x, this.y, this.r * 2, this.r * 2); // Draw the projectile
     }
@@ -84,8 +193,8 @@ class Asteroid {
   display() {
     if (this.active) {
       // Draw the asteroid  
-      stroke(0, 255, 0);
-      strokeWeight(1.5);
+      stroke(WHITE);
+      strokeWeight(1);
       fill(0, 0, 0);
       let angle = TWO_PI / this.n;
       beginShape();
@@ -118,31 +227,17 @@ class Ship {
 
   // Move the ship to the right
   move_right() {
-    if (this.active && fuel > 0 && this.x < (C_WIDTH - this.deltaX - this.r)) {
+    if (this.active && this.x < (C_WIDTH - this.deltaX - this.r)) {
       this.x = this.x + this.deltaX;
-      console.log("Ship X: " + this.x);
-      fuel = fuel - FUEL_COST;
-      if (fuel <= 0) {
-        fuel = 0;
-      }
       this.display();
-      console.log("Ship moved right")
-      console.log("Fuel: " + fuel);
     }
   }
 
   // Move the ship to the left
   move_left() {
-    if (this.active && fuel > 0 && this.x > (0 + this.deltaX + this.r)) {
+    if (this.active && this.x > (0 + this.deltaX + this.r)) {
       this.x = this.x - this.deltaX;
-      console.log("Ship X: " + this.x);
-      fuel = fuel - FUEL_COST;
-      if (fuel <= 0) {
-        fuel = 0;
-      }
       this.display();
-      console.log("Ship moved left");
-      console.log("Fuel: " + fuel);
     }
   }
 
@@ -154,9 +249,9 @@ class Ship {
   // Display the ship
   display() {
     if (this.active) {
-      stroke(0, 255, 0);
-      strokeWeight(1.5);
-      fill(0, 0, 0);
+      stroke(GREEN);
+      strokeWeight(1);
+      fill(BLACK);
       beginShape();
       // Start at the shape at ship's nose and then draw clockwise
       vertex(this.x, this.y - 19); // nose of ship

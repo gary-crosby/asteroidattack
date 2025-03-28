@@ -7,7 +7,7 @@
  * Reset canvas background
  */
 function resetBackground() {
-  background(0, 0, 0); // Reset background color
+  background(BLACK); // Reset background color
 }
 
 
@@ -15,15 +15,12 @@ function resetBackground() {
  * Reset values for Globals to start/restart game play.
  */
 function resetVariables() {
+  // Set to initial states
   weaponFrame = 0; // frame count last time weapon was fired
-  weapon = 100; // weapon energy (%)
-  shield = 100; // shield energy (%)
-  fuel = 100; // fuel supply (%)
-  musicState = false; // false to stop or true to play
+  musicPlaying = false; // false to stop or true to play
   gameState = STATE_INTRO; // values: STATE_INTRO, STATE_PLAY,STATE_GAMEOVERR, STATE_CREDITS
   introLevel = 0; // INTRO gameState: 0, 1, 2
   playLevel = 0; //PLAY gameState level: 0 ... 
-  score = 0; // score
   winSndPlayed = false;
   PLAY_LEVELS[0][3] = 0;
   PLAY_LEVELS[1][3] = 0;
@@ -54,7 +51,7 @@ function keyPressed(key) {
 
   // Enter key pressed in Intro state
   if (gameState === STATE_INTRO) {
-     // Detect ENTER to advance to next INTRO screen
+    // Detect ENTER to advance to next INTRO screen
     if (introLevel < 2 && (keyCode === 13)) {
       introLevel += 1
     }
@@ -68,25 +65,11 @@ function keyPressed(key) {
     // Detect ENTER to play again
     if (keyCode === 13) {
       resetVariables();
+      myDisplay.reset();
       gameState = STATE_PLAY;
     }
   }
   return false; // Prevent default browser behavior for keypress
-}
-
-
-/**
- * Create and update screen displays for shield, weapon, fuel, and score
- */
-function playerConsole() {
-  strokeWeight(0);
-  textAlign(LEFT, TOP);
-  textSize(20);
-  fill(0, 255, 0);
-  text("Shield: " + parseInt(shield) + "%", 165, (C_HEIGHT - 995));
-  text("Weapon: " + parseInt(weapon) + "%", 350, (C_HEIGHT - 995));
-  text("Fuel: " + parseInt(fuel) + "%", 10, (C_HEIGHT - 995));
-  text("Score: " + score, 555, (C_HEIGHT - 995));
 }
 
 
@@ -146,13 +129,13 @@ function controlAsteroids(createNew = false) {
       // Asteroid has collided with ship
       else {
         removeAsteroids.push(i);
-        updateScore(ASTEROID_SCORE);
-        shield = shield - SHIELD_COST;
-        if (shield >= 0) {
+        myDisplay.asteroidDestroyed();
+        myDisplay.collision();
+        if (myDisplay.shield >= 0) {
           shieldSnd.play();
         }
-        if (shield < 0) {
-          shield = 0;
+        if (myDisplay.shield < 0) {
+          myDisplay.shield = 0;
           shipDestroySnd.play()
           gameState = STATE_GAMEOVER;
         }
@@ -182,18 +165,15 @@ function controlProjectiles(createNew = false) {
     let newProjectile = new projectile(myShip.x, (myShip.y - 21));
     projectiles.push(newProjectile);
     // Update the last firing frame number and weapons status
-    weaponFrame = frameN; 
-    weapon -= WEAPON_COST;
-    if (weapon <= 0) {
-      weapon = 0;
-    }
+    weaponFrame = frameN;
+    myDisplay.weaponFired();
   }
 
   // Update and display EXISTING projectiles only
   else {
     // Create arrays to hold lists of projectiles and asteroids to remove
-    let projectilesToRemove = []; 
-    const asteroidsToRemove = []; 
+    let projectilesToRemove = [];
+    const asteroidsToRemove = [];
 
     // Check for out of bounds projectiles
     for (let p = 0; p < projectiles.length; p++) {
@@ -226,7 +206,7 @@ function controlProjectiles(createNew = false) {
               projectilesToRemove.push(p);
               // Add asteroid to removals list
               asteroidsToRemove.push(a);
-              updateScore(ASTEROID_SCORE);
+              myDisplay.asteroidDestroyed();
             }
           }
         }
@@ -255,14 +235,13 @@ function controlProjectiles(createNew = false) {
 
 
 /**
- * Play or stop music
+ * Plas / Stops
  * 
- * IMPORTANT: INCOMPLETE AND NOT CURRENTLY USED
+ * IMPORTANT: INCOMPLETE
  * 
  * @param {Boolean} state 
  */
-function playMusic(state) {
-
+function doMusic(state) {
   // Play music
   if (state == true) {
     console.log("Start music");
@@ -274,7 +253,7 @@ function playMusic(state) {
     console.log("Stop music");
     // CODE TO STOP MUSIC
   }
-  musicState = state;
+  musicPlaying = state;
 }
 
 
@@ -290,12 +269,3 @@ function getRandomInt(min, max) {
   return (Math.floor(Math.random() * (max - min + 1)) + min);
 }
 
-
-/**
- * Update score 
- * 
- * @param {*} scoreValue 
- */
-function updateScore(scoreValue) {
-  score = score + scoreValue;
-}
