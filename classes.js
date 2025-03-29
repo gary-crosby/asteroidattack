@@ -10,10 +10,14 @@
  * @param {number} shield == % remaining of shield
  * @param {number} fuel == % remaining of fuel
  * @param {number} score == player's score
+ * @param {number} weaponCost == % weapon cost per shot
+ * @param {number} shieldCost == % of shield cost per collision
+ * @param {number} fuelCost == % of fuel per move
+ * @param {number} asteroidScore == score value per asteeroid destroyed
  */
 class myConsole {
   constructor(weapon = 100, shield = 100, fuel = 100, score = 0,
-    weaponCost = 0.4, shieldCost = 50, fuelCost = 0.035, asteroidScore = 1000) {
+    weaponCost = 0.5, shieldCost = 50, fuelCost = 0.035, asteroidScore = 1000) {
     this.weapon = weapon;
     this.weaponCost = weaponCost;
     this.shield = shield;
@@ -226,7 +230,7 @@ class Ship {
   }
 
   // Move the ship to the right
-  move_right() {
+  moveRight() {
     if (this.active && this.x < (C_WIDTH - this.deltaX - this.r)) {
       this.x = this.x + this.deltaX;
       this.display();
@@ -234,7 +238,7 @@ class Ship {
   }
 
   // Move the ship to the left
-  move_left() {
+  moveLeft() {
     if (this.active && this.x > (0 + this.deltaX + this.r)) {
       this.x = this.x - this.deltaX;
       this.display();

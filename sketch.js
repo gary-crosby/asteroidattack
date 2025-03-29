@@ -24,7 +24,7 @@
  * USE GLOBAL VARIABLES ONLY WHEN ABSOLUTELY NECESSARY!
  */
 
-// UI colors -- SOME COLORS ARE NOT USED
+// UI colors. Note: Some colors are not used at present
 const BLACK = [0, 0, 0];
 const RED = [204, 143, 92];
 const GREEN = [0, 255, 0];
@@ -51,11 +51,11 @@ const asteroids = []; // array to hold all active asteroid instances
 // Array for play level specifics
 // [# ast to create, ast move interval, ast create frequency, # ast created]
 const PLAY_LEVELS = [[30, 0.5, 60, 0], [45, 0.75, 50, 0], [60, 1, 40, 0]];
-// Weapons variables
+// Weapons 
 const WEAPON_REGEN = 15; // # of frames between consecutive weapons fire
 let frameN = 0; // # of frames since app start
 let weaponFrame = 0; // frame count last time weapon was fired
-// Sounds/music
+// Sounds and music
 let musicPlaying = false; // false to stop or true to play
 let weaponFireSnd; // weapon sound 
 let astDestroySnd; // asteroid destroyed sound
@@ -202,7 +202,7 @@ function draw() {
           // Move ship right using keys: -> or d or D
           if (keyCode === RIGHT_ARROW || key === 'd' || key === 'D') {
             if (myDisplay.fuel > 0) {
-              myShip.move_right();
+              myShip.moveRight();
               myDisplay.shipMoved();
               // Start the thruster sound if it's not playing
               if (!thrusterSnd.isPlaying()) {
@@ -214,7 +214,7 @@ function draw() {
           // Move ship left using keys: <- or a or A
           else if (keyCode === LEFT_ARROW || key === 'a' || key === 'A') {
             if (myDisplay.fuel > 0) {
-              myShip.move_left();
+              myShip.moveLeft();
               // Start the thruster sound if it's not playing
               if (!thrusterSnd.isPlaying()) {
                 thrusterSnd.play();
@@ -277,7 +277,7 @@ function draw() {
       text("Mission Accomplished!", C_WIDTH / 2, C_HEIGHT / 5);
       textAlign(LEFT, TOP);
       textSize(24);
-      text("You cleared the asteroid fields and delivered your cargo. Nice piloting!\n\n Your mission pay is $" + score, C_WIDTH / 5, C_HEIGHT / 3.6, C_WIDTH / 1.5);
+      text("You cleared the asteroid fields and delivered your cargo. Nice piloting!\n\n Your mission pay is $" + myDisplay.score, C_WIDTH / 5, C_HEIGHT / 3.6, C_WIDTH / 1.5);
       textAlign(CENTER, TOP);
       textSize(20);
       fill(LIGHT_GREEN); // light green text

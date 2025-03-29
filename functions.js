@@ -235,7 +235,7 @@ function controlProjectiles(createNew = false) {
 
 
 /**
- * Plas / Stops
+ * Play/Stop music
  * 
  * IMPORTANT: INCOMPLETE
  * 
@@ -268,4 +268,3 @@ function doMusic(state) {
 function getRandomInt(min, max) {
   return (Math.floor(Math.random() * (max - min + 1)) + min);
 }
-
