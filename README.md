@@ -8,7 +8,7 @@ The game aesthetics were loosely inspired some of the early video games that had
 
 I created this project for my Sask Polytech MULT 217 students as an example of a simple game that can be created with p5.js.
 
-It was a quick build so it contains some sloppy or inefficient code. It could also could use a few additional gameplay elements to make it more fun. But it works well enough as a demo.
+It was a quick build so it contains some sloppy or inefficient code. It could also could use a few additional gameplay elements to make it more fun. But it works well enough for the intended purpose of a demo.
 
 
 ## Credits
