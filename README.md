@@ -20,7 +20,7 @@ Audio asset _success.mp3_ from Leszek_Szary @ www.pixabay.com used under CC0 lic
 
 ## Installation
 
-Regardless of which method you use to install it, **you must run the game from a server**.
+Regardless of how you intall the game, **you must run it from a server**.
 
 ### Method 1
 Clone the repository:
