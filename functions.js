@@ -25,7 +25,8 @@ function resetVariables() {
   PLAY_LEVELS[0][3] = 0;
   PLAY_LEVELS[1][3] = 0;
   PLAY_LEVELS[2][3] = 0;
-  // Remove all elements from arrays for projectiles and asteroids
+  // Arrays for projectiles and asteroids should be empty
+  // but we'll remove all elements from them anyway.
   if (projectiles.length > 0) {
     for (let i = projectiles.length - 1; i >= 0; i--) {
       projectiles[i].destroy();
@@ -54,6 +55,9 @@ function keyPressed(key) {
     // Detect ENTER to advance to next INTRO screen
     if (introLevel < 2 && (keyCode === 13)) {
       introLevel += 1
+      if (musicPlaying === false) {
+        doMusic(true); // Start music
+      }
     }
     // Detect ENTER to advance to PLAY level
     else if (introLevel === 2 && (keyCode === 13)) {
@@ -245,13 +249,13 @@ function doMusic(state) {
   // Play music
   if (state == true) {
     console.log("Start music");
-    // CODE TO PLAY MUSIC
+    musicTrack.play();
   }
 
   // Stop music
   else {
     console.log("Stop music");
-    // CODE TO STOP MUSIC
+    musicTrack.pause();
   }
   musicPlaying = state;
 }

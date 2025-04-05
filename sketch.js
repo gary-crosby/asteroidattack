@@ -5,9 +5,9 @@
  * created by Gary Crosby
  * 
  * This is a simple space shooter game.
- * The game aesthetics were influenced by early of the
- * late 1970's-early 1980's that had vector-based graphics with
- * limited color palettes.
+ * The game aesthetics were influenced by some of the
+ * late 1970's-early 1980's that had vector-based
+ * graphics with limited color palettes.
  * 
  * The game isn't perfect, it contains some sloppy/inefficient code,
  * and it could use a few gameplay embellishments but it works.
@@ -17,14 +17,11 @@
  * Audio asset success.mp3 from Leszek_Szary @ pixabay.com used under CC0 license.
 */
 
-
 /**
  * Initialize ALL global constants and variables
- * 
- * USE GLOBAL VARIABLES ONLY WHEN ABSOLUTELY NECESSARY!
  */
 
-// UI colors. Note: Some colors are not used at present
+// UI colors. Not all colours are used.
 const BLACK = [0, 0, 0];
 const RED = [204, 143, 92];
 const GREEN = [0, 255, 0];
@@ -77,6 +74,7 @@ function preload() {
   shipDestroySnd = loadSound('/assets/explosionCrunch_002.ogg');
   thrusterSnd = loadSound('/assets/thrusterFire_004.ogg');
   winSnd = loadSound('/assets/success.mp3');
+  musicTrack = loadSound('/assets/Light-Years_V001_Looping.mp3');
 }
 
 
@@ -90,6 +88,8 @@ function setup() {
   createCanvas(C_WIDTH, C_HEIGHT);
   resetBackground();
   soundFormats('ogg');
+  musicTrack.loop = true;   
+  musicTrack.setVolume(0.25);
 }
 
 
@@ -111,9 +111,6 @@ function draw() {
 
       // INTRO -> Splash screen 
       if (introLevel === 0) {
-        if (musicPlaying === false) {
-          doMusic(true); // Start music
-        }
         resetBackground();
         stroke(GREEN);
         strokeWeight(0)
@@ -126,7 +123,11 @@ function draw() {
         fill(GREEN);
         textSize(20);
         text("a retro-inspired video game", C_WIDTH / 2, C_HEIGHT / 3.9);
+        textSize(12);
+        text("Created by:\nGary Crosby", C_WIDTH / 2, C_HEIGHT / 3.1);  
+        text("Credits:\nSound effects from www.kenney.nl and leszek_szary at www.pixabay.com\nMusic by Eric Matyas at www.soundimage.org", C_WIDTH / 2, C_HEIGHT / 2.6);  
         fill(LIGHT_GREEN);
+        textSize(20);
         text("[Press Enter to continue]", C_WIDTH / 2, C_HEIGHT / 1.1); // keypress detection in function keyPressed()
       }
 
@@ -170,14 +171,12 @@ function draw() {
       // Sets PLAY level state
       if (asteroids.length === 0 && projectiles.length === 0 && PLAY_LEVELS[playLevel][3] === PLAY_LEVELS[playLevel][0]) {
         playLevel += 1;
-        console.log("playLevel incremented to: " + playLevel);
       }
       // Check for ALL levels completed -> WIN!
       if (playLevel === PLAY_LEVELS.length) {
         gameState = STATE_WIN;
       }
       else {
-
         // Clear the background and kill music
         resetBackground();
         doMusic(false);
@@ -226,7 +225,7 @@ function draw() {
           // Fire weapon using key: space bar
           else if (keyCode === 32) {
             // Fire weapon only if enough time has passed since last firing
-            if ( (frameN - weaponFrame) > WEAPON_REGEN && myDisplay.weapon > 0) {
+            if ((frameN - weaponFrame) > WEAPON_REGEN && myDisplay.weapon > 0) {
               controlProjectiles(true);
               // Play the weapon sound
               weaponFireSnd.play();
@@ -235,9 +234,7 @@ function draw() {
         }
         else {
           // Stop the thruster sound if it's playing
-          if (thrusterSnd.isPlaying()) {
-            thrusterSnd.stop();
-          }
+          if (thrusterSnd.isPlaying()) thrusterSnd.stop();
         }
         // Update player status display and projectile position
         myDisplay.display();
@@ -249,7 +246,7 @@ function draw() {
         if (PLAY_LEVELS[playLevel][3] < PLAY_LEVELS[playLevel][0]) {
           let initAsteroid = getRandomInt(1, PLAY_LEVELS[playLevel][2]);
           if (initAsteroid === 1) {
-            controlAsteroids(true)
+            controlAsteroids(true);
           }
         }
         // Update all asteroids
@@ -266,6 +263,9 @@ function draw() {
       if (winSndPlayed === false) {
         winSnd.play();
         winSndPlayed = true;
+      }
+      if (musicPlaying === false) {
+        doMusic(true); // Start music
       }
       myShip.x = C_WIDTH / 2;
       myShip.y = C_HEIGHT - 30;
@@ -287,6 +287,9 @@ function draw() {
 
     // GAME OVER :-(
     case STATE_GAMEOVER:
+      if (musicPlaying === false) {
+        doMusic(true); // Start music
+      }
       myShip.x = C_WIDTH / 2;
       myShip.y = C_HEIGHT - 30;
       resetBackground();
