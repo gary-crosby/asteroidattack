@@ -13,9 +13,11 @@ It was a quick build so it contains some sloppy or inefficient code. And it coul
 
 ## Credits
 
-Audio assets except _success.mp3_ from www.kenney.nl used under CC0 license.
+Sound effects except _success.mp3_ from www.kenney.nl used under CC0 license.
 
-Audio asset _success.mp3_ from Leszek_Szary @ www.pixabay.com used under CC0 license.
+Sound effect _success.mp3_ from Leszek_Szary @ www.pixabay.com used under CC0 license.
+
+Music by  Eric Matyas at www.soundimage.org 
 
 
 ## Installation
