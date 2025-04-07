@@ -4,17 +4,24 @@
  * 
  * created by Gary Crosby
  * 
- * This is a simple space shooter game.
- * The game aesthetics were influenced by some of the
- * late 1970's-early 1980's that had vector-based
- * graphics with limited color palettes.
+ * Asteroid Attack! is a simple retro-inspired space shooter game
+ * where you defend your spaceship from incoming asteroids.
+ *
+ * The game aesthetics were loosely inspired by some of the early video games
+ * which had simple, vector-based graphics and a limited colour palette.
  * 
- * The game isn't perfect, it contains some sloppy/inefficient code,
- * and it could use a few gameplay embellishments but it works.
+ * I created this project for my post-sceondary students who, in one course,
+ * use p5.js to create a game, puzzle, etc. So, the project is intended to be
+ * an example of a simple game that can be created using p5.js.
+ * 
+ * It was a quick build so it contains some sloppy or inefficient code.
+ * And it could also use a few additional gameplay elements to make it more fun.
+ * But it works well enough for the intended purpose of a demo.
  * 
  * Credits:
- * Audio assets except success.mp3 from www.kenney.nl used under CC0 license.
- * Audio asset success.mp3 from Leszek_Szary @ pixabay.com used under CC0 license.
+ * Audio assets except success.mp3 from www.kenney.nl
+ * Audio asset success.mp3 from Leszek_Szary @ pixabay.com
+ * Music by Eric Matyas at www.soundimage.org 
 */
 
 /**
@@ -88,7 +95,7 @@ function setup() {
   createCanvas(C_WIDTH, C_HEIGHT);
   resetBackground();
   soundFormats('ogg');
-  musicTrack.loop = true;   
+  musicTrack.loop = true;
   musicTrack.setVolume(0.25);
 }
 
@@ -124,8 +131,8 @@ function draw() {
         textSize(20);
         text("a retro-inspired video game", C_WIDTH / 2, C_HEIGHT / 3.9);
         textSize(12);
-        text("Created by:\nGary Crosby", C_WIDTH / 2, C_HEIGHT / 3.1);  
-        text("Credits:\nSound effects from www.kenney.nl and leszek_szary at www.pixabay.com\nMusic by Eric Matyas at www.soundimage.org", C_WIDTH / 2, C_HEIGHT / 2.6);  
+        text("Created by:\nGary Crosby", C_WIDTH / 2, C_HEIGHT / 3.1);
+        text("Credits:\nSound effects from www.kenney.nl and leszek_szary at www.pixabay.com\nMusic by Eric Matyas at www.soundimage.org", C_WIDTH / 2, C_HEIGHT / 2.6);
         fill(LIGHT_GREEN);
         textSize(20);
         text("[Press Enter to continue]", C_WIDTH / 2, C_HEIGHT / 1.1); // keypress detection in function keyPressed()
