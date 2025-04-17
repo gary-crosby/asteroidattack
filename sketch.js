@@ -2,7 +2,9 @@
  * Asteroid Alert!
  * a retro-inspired video game
  * 
- * created by Gary Crosby
+ * Created by: Gary Crosby
+ *
+ * Last modified: 2025-04-17 
  * 
  * Asteroid Attack! is a simple retro-inspired space shooter game
  * where you defend your spaceship from incoming asteroids.
