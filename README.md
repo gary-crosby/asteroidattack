@@ -22,7 +22,7 @@ Music by Eric Matyas at www.soundimage.org
 
 ## Installation
 
-Regardless of how you intsall the game, **you must run it from a server**.
+Regardless of how you install the game, **you must run it from a server**.
 
 ### Method 1
 Clone the repository:
