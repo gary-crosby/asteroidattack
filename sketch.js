@@ -4,6 +4,7 @@
  * 
  * Created by: Gary Crosby
  *
+ * Version: 1.0.1
  * Last modified: 2025-04-17 
  * 
  * Asteroid Attack! is a simple retro-inspired space shooter game
