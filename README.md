@@ -22,8 +22,6 @@ Music by Eric Matyas at www.soundimage.org
 
 ## Installation
 
-Regardless of how you install the game, **you must run it from a server**.
-
 ### Method 1
 Clone the repository:
    ```bash
@@ -32,3 +30,5 @@ Clone the repository:
    
 ### Method 2
 Download the ZIP file.
+
+**Note:** Regardless of how you install the game, **you must run it from a server**.
