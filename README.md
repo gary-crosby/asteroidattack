@@ -8,7 +8,7 @@ The game aesthetics were loosely inspired by some of the early video games which
 
 I created this project for my post-secondary students who, in one course, use p5.js to create a game, puzzle, etc. So, the project is intended to be an example of a simple game that can be created using p5.js.
 
-It was a quick build so it contains some sloppy or inefficient code. And it could also use a few additional gameplay elements to make it more fun. But it works well enough for the intended purpose of a demo.
+It was a quick build so it contains some sloppy or inefficient code. And to make it more fun it could use a few additional gameplay elements. But it works well enough for the intended purpose of a demo.
 
 Regardless of how you install the game, **you must run it from a server**.
 
