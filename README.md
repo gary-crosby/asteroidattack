@@ -31,4 +31,4 @@ Clone the repository:
 ```
    
 ### Method 2
-Download the ZIP file.
+Download a ZIP file of the repository.
