@@ -10,6 +10,8 @@ I created this project for my post-secondary students who, in one course, use p5
 
 It was a quick build so it contains some sloppy or inefficient code. And it could also use a few additional gameplay elements to make it more fun. But it works well enough for the intended purpose of a demo.
 
+Regardless of how you install the game, **you must run it from a server**.
+
 
 ## Credits
 
@@ -22,8 +24,6 @@ Music by Eric Matyas at www.soundimage.org
 
 ## Installation
 
-**Note:** Regardless of how you install the game, **you must run it from a server**.
-
 ### Method 1
 Clone the repository:
    ```bash
@@ -32,5 +32,3 @@ Clone the repository:
    
 ### Method 2
 Download the ZIP file.
-
-
