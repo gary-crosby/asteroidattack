@@ -21,7 +21,6 @@ Sound effect _success.mp3_ from Leszek_Szary @ www.pixabay.com used under CC0 li
 
 Music by Eric Matyas at www.soundimage.org 
 
-
 ## Installation
 
 ### Method 1
