@@ -6,7 +6,7 @@ The game aesthetics were loosely inspired by some of the early video games which
 
 ## Notes
 
-I created this project for my post-secondary students who, in one course, use p5.js to create a game, a puzzle, etc. So, the project is intended to be an example of a simple game that can be created using p5.js. Because it's a demo for students, some of the comments are directed towards them.
+I created this project for my post-secondary students who, in one course, use p5.js to create a game, a puzzle, etc. The project is intended to be an example of a simple game that can be created using p5.js. Because it's a demo for students, some of the comments are directed towards them.
 
 It was a quick build so it contains some sloppy or inefficient code. And to make it more fun it could use a few additional gameplay elements. But it works well enough for the intended purpose of a demo.
 
