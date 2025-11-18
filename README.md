@@ -31,3 +31,5 @@ Clone the repository:
    
 ### Method 2
 Download a ZIP file of the repository.
+
+**Regardless of how you install the game, you must run it from a server**.
