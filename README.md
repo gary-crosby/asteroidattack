@@ -10,7 +10,7 @@ I created this project for my post-secondary students who, in one course, use p5
 
 It was a quick build so it contains some sloppy or inefficient code. And to make it more fun it could use a few additional gameplay elements. But it works well enough for the intended purpose of a demo.
 
-**Regardless of how you install the game, you must run it from a server**.
+THe game must be run from a server.
 
 
 ## Credits
